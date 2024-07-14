@@ -5,11 +5,21 @@ import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.ports.in.GestionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServices {
 
     private final GestionUser gestionUser;
+
+    public User getUserById(Long id) {
+        return gestionUser.getUserById(id);
+    }
+
+    public List<User> getAllUsers() {
+        return gestionUser.getAllUsers();
+    }
 
     public User guardar(User user) {
         return gestionUser.guardar(user);

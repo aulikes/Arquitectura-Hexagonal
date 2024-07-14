@@ -2,33 +2,38 @@ package com.aug.hexagonal.ArquitecturaHexagonalMIO.application.usecases;
 
 import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.entities.User;
 import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.ports.in.GestionUser;
+import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.ports.out.UserPersistencePort;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 public class GestionUserImpl implements GestionUser {
+
+    private final UserPersistencePort userPersistencePort;
 
     @Override
     public User getUserById(Long id) {
-        return null;
+        return userPersistencePort.findById(id);
     }
 
     @Override
     public List<User> getAllUsers() {
-        return List.of();
+        return userPersistencePort.findAll();
     }
 
     @Override
     public User guardar(User user) {
-        return null;
+        return userPersistencePort.save(user);
     }
 
     @Override
     public User modificar(User user) {
-        return null;
+        return userPersistencePort.save(user);
     }
 
     @Override
     public void eliminar(Long id) {
-
+        userPersistencePort.findById(id);
     }
 }
