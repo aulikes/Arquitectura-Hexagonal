@@ -4,9 +4,11 @@ import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.entities.User;
 import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.ports.in.GestionUser;
 import com.aug.hexagonal.ArquitecturaHexagonalMIO.dominio.ports.out.UserPersistencePort;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @RequiredArgsConstructor
 public class GestionUserImpl implements GestionUser {
 
