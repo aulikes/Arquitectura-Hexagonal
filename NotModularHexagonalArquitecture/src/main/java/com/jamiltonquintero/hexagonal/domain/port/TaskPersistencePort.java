@@ -4,7 +4,7 @@ import com.jamiltonquintero.hexagonal.domain.model.Task;
 
 import java.util.List;
 
-public interface TaskPersistencePort {
+public interface    TaskPersistencePort {
 
     Task create(Task request);
     Task getById(Long id);
