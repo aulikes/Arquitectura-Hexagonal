@@ -36,6 +36,6 @@ public class GestionUserImpl implements GestionUser {
 
     @Override
     public void eliminar(Long id) {
-        userPersistencePort.findById(id);
+        userPersistencePort.deleteById(id);
     }
 }
